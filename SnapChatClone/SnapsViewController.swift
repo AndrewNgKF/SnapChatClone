@@ -34,12 +34,28 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.imageURL = snapshot.childSnapshot(forPath: "imageUrl").value as! String
             snap.from = snapshot.childSnapshot(forPath: "from").value as! String
             snap.descrip = snapshot.childSnapshot(forPath: "description").value as! String
+            snap.key = snapshot.key
+            
+            snap.uuid = snapshot.childSnapshot(forPath: "uuid").value as! String
  
             print(snapshot)
             
             self.snaps.append(snap)
             self.tableView.reloadData()
             
+        })
+        
+        FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).child("snaps").observe(FIRDataEventType.childRemoved, with: {(snapshot) in
+            
+            var index = 0
+            for snap in self.snaps {
+                if snap.key == snapshot.key {
+                    self.snaps.remove(at: index)
+                }
+                index += 1
+            }
+            self.tableView.reloadData()
+           
         })
     }
     
@@ -48,15 +64,29 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return snaps.count
+        
+        if snaps.count == 0 {
+            return 1
+        } else {
+            return snaps.count
+
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let snap = snaps[indexPath.row]
         
+        if snaps.count == 0 {
+            
+            cell.textLabel?.text = "You have no snaps 😔"
+        } else {
+            let snap = snaps[indexPath.row]
+
+            cell.textLabel?.text = snap.descrip
+        }
         
-        cell.textLabel?.text = snap.descrip
         return cell
+
     }
    
     @IBAction func logoutTapped(_ sender: AnyObject) {

@@ -393,6 +393,7 @@
 				CODE_SIGN_ENTITLEMENTS = SnapChatClone/SnapChatClone.entitlements;
 				DEVELOPMENT_TEAM = 7FUMWZ2NUV;
 				INFOPLIST_FILE = SnapChatClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewNg.SnapChatClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +409,7 @@
 				CODE_SIGN_ENTITLEMENTS = SnapChatClone/SnapChatClone.entitlements;
 				DEVELOPMENT_TEAM = 7FUMWZ2NUV;
 				INFOPLIST_FILE = SnapChatClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewNg.SnapChatClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";

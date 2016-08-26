@@ -16,11 +16,14 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var imageView: UIImageView!
     
     var imagePicker = UIImagePickerController()
+    
+    var uuid = NSUUID().uuidString
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        nextBtn.isEnabled = false
 
     }
     
@@ -28,13 +31,14 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
         imageView.image = image
         imagePicker.dismiss(animated: true, completion: nil)
+        nextBtn.isEnabled = true
         
     }
 
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
         
-        imagePicker.sourceType = .photoLibrary //change to camera, only for debgging purposes.
+        imagePicker.sourceType = .camera //change to camera, only for debgging purposes.
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
         
@@ -50,7 +54,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         
         
-        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData!, metadata: nil) { (metadata, error) in
+        imagesFolder.child("\(uuid).jpg").put(imageData!, metadata: nil) { (metadata, error) in
             
             print("We tried to upload")
             if error != nil {
@@ -73,6 +77,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let nextVC = segue.destination as! SelectUserViewController
         nextVC.imageUrl = sender as! String
         nextVC.descrip = descriptionTextField.text!
+        nextVC.uuid = uuid
         
     }
     

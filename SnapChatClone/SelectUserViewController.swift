@@ -17,7 +17,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var imageUrl = ""
     var descrip = ""
-    
+    var uuid = ""
     
 
     override func viewDidLoad() {
@@ -68,7 +68,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
 
         let user = users[indexPath.row]
         
-        let snap = ["from": user.email, "description": descrip, "imageUrl": imageUrl]
+        let snap = ["from": FIRAuth.auth()!.currentUser!.email!, "description": descrip, "imageUrl": imageUrl, "uuid": uuid]
         
         FIRDatabase.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         
