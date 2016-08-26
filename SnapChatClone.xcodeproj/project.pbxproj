@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F3972741D6DE7540089BC4B /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3972731D6DE7540089BC4B /* Snap.swift */; };
+		6F3972761D6DEB6E0089BC4B /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3972751D6DEB6E0089BC4B /* ViewSnapViewController.swift */; };
 		6F5EFE1D1D6D92AE00F78EB4 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5EFE1C1D6D92AE00F78EB4 /* SnapsViewController.swift */; };
 		6F5EFE1F1D6D982000F78EB4 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5EFE1E1D6D982000F78EB4 /* PictureViewController.swift */; };
 		6F5EFE211D6DBD4E00F78EB4 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5EFE201D6DBD4E00F78EB4 /* SelectUserViewController.swift */; };
+		6F5EFE231D6DC01600F78EB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5EFE221D6DC01600F78EB4 /* User.swift */; };
 		6F6927481D6D86990055B413 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6927471D6D86990055B413 /* AppDelegate.swift */; };
 		6F69274A1D6D86990055B413 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6927491D6D86990055B413 /* ViewController.swift */; };
 		6F69274D1D6D86990055B413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F69274B1D6D86990055B413 /* Main.storyboard */; };
@@ -22,10 +25,13 @@
 
 /* Begin PBXFileReference section */
 		1B81EE2A2996BD729E95378E /* Pods-SnapChatClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChatClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapChatClone/Pods-SnapChatClone.debug.xcconfig"; sourceTree = "<group>"; };
+		6F3972731D6DE7540089BC4B /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		6F3972751D6DEB6E0089BC4B /* ViewSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		6F5EFE1B1D6D924300F78EB4 /* SnapChatClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnapChatClone.entitlements; sourceTree = "<group>"; };
 		6F5EFE1C1D6D92AE00F78EB4 /* SnapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		6F5EFE1E1D6D982000F78EB4 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		6F5EFE201D6DBD4E00F78EB4 /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
+		6F5EFE221D6DC01600F78EB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6F6927441D6D86990055B413 /* SnapChatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6927471D6D86990055B413 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F6927491D6D86990055B413 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +65,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6F5EFE241D6DC02D00F78EB4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F6927491D6D86990055B413 /* ViewController.swift */,
+				6FE116F81D6D8A4000F29186 /* SignInViewController.swift */,
+				6F5EFE1E1D6D982000F78EB4 /* PictureViewController.swift */,
+				6F5EFE1C1D6D92AE00F78EB4 /* SnapsViewController.swift */,
+				6F5EFE201D6DBD4E00F78EB4 /* SelectUserViewController.swift */,
+				6F3972751D6DEB6E0089BC4B /* ViewSnapViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6F5EFE251D6DC03B00F78EB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6F5EFE221D6DC01600F78EB4 /* User.swift */,
+				6F3972731D6DE7540089BC4B /* Snap.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		6F69273B1D6D86990055B413 = {
 			isa = PBXGroup;
 			children = (
@@ -80,18 +108,15 @@
 		6F6927461D6D86990055B413 /* SnapChatClone */ = {
 			isa = PBXGroup;
 			children = (
+				6F5EFE241D6DC02D00F78EB4 /* ViewControllers */,
+				6F5EFE251D6DC03B00F78EB4 /* Models */,
 				6F5EFE1B1D6D924300F78EB4 /* SnapChatClone.entitlements */,
 				6F6927471D6D86990055B413 /* AppDelegate.swift */,
-				6F6927491D6D86990055B413 /* ViewController.swift */,
-				6FE116F81D6D8A4000F29186 /* SignInViewController.swift */,
-				6F5EFE1E1D6D982000F78EB4 /* PictureViewController.swift */,
 				6F69274B1D6D86990055B413 /* Main.storyboard */,
 				6F69274E1D6D86990055B413 /* Assets.xcassets */,
 				6F6927501D6D86990055B413 /* LaunchScreen.storyboard */,
 				6F6927531D6D86990055B413 /* Info.plist */,
 				6F6927591D6D876B0055B413 /* GoogleService-Info.plist */,
-				6F5EFE1C1D6D92AE00F78EB4 /* SnapsViewController.swift */,
-				6F5EFE201D6DBD4E00F78EB4 /* SelectUserViewController.swift */,
 			);
 			path = SnapChatClone;
 			sourceTree = "<group>";
@@ -241,6 +266,9 @@
 				6F5EFE211D6DBD4E00F78EB4 /* SelectUserViewController.swift in Sources */,
 				6FE116F91D6D8A4000F29186 /* SignInViewController.swift in Sources */,
 				6F5EFE1F1D6D982000F78EB4 /* PictureViewController.swift in Sources */,
+				6F5EFE231D6DC01600F78EB4 /* User.swift in Sources */,
+				6F3972761D6DEB6E0089BC4B /* ViewSnapViewController.swift in Sources */,
+				6F3972741D6DE7540089BC4B /* Snap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

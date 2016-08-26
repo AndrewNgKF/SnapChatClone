@@ -38,6 +38,12 @@ class SignInViewController: UIViewController {
                         print("Create Email ID error \(error)")
                     } else {
                         print("created user successfully")
+                        
+                        // Creates Firebase DataBase for User UID and underneath, their Email!
+                        
+                        FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email)
+                        
+                        
                         self.performSegue(withIdentifier: "signInSegue", sender: nil)
                     }
                     
